@@ -4,34 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b37bf82-15bb-4b50-959d-bef073ec9585" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Layered_API.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hotel.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hotel/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hotel/db/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hotel/db/create_db.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hotel/db/db_interface.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hotel/db/engine.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hotel/db/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hotel/db/sample_data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hotel/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hotel/operations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hotel/operations/bookings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hotel/operations/customers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hotel/operations/interface.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hotel/operations/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hotel/operations/rooms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hotel/routers/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hotel/routers/bookings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hotel/routers/customers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hotel/routers/rooms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hotel/test_booking.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-    </list>
+    <list default="true" id="0b37bf82-15bb-4b50-959d-bef073ec9585" name="Changes" comment="Initial commit." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,6 +21,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="791dd8e0-81e4-4868-a8e8-f0b6cfed9c54" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -76,6 +52,11 @@
     "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
     "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "ChangesTree.GroupingKeys": [
+      "repository"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
@@ -99,11 +80,32 @@
       <option name="presentableId" value="Default" />
       <updated>1766901010948</updated>
       <workItem from="1766903856314" duration="95000" />
-      <workItem from="1766952330341" duration="4531000" />
+      <workItem from="1766952330341" duration="4794000" />
     </task>
+    <task id="LOCAL-00001" summary="Initial commit.">
+      <option name="closed" value="true" />
+      <created>1766966441166</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1766966441166</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Initial commit.">
+      <option name="closed" value="true" />
+      <created>1766966453999</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1766966453999</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial commit." />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit." />
   </component>
 </project>
