@@ -1,8 +1,8 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-from .models import Base
-from .sample_data import customers, rooms
+from hotel.db.models import Base
+from hotel.db.sample_data import customers, rooms
 
 
 def create_db(file: str):

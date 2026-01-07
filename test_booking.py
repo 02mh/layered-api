@@ -8,6 +8,7 @@ from datetime import date
 from hotel.db.db_interface import DataObject
 from hotel.operations.bookings import create_booking
 from hotel.operations.models import BookingCreateData
+from hotel.exceptions import InvalidDateRangeException
 
 
 class RoomInterface:
@@ -65,7 +66,7 @@ class TestBooking(unittest.TestCase):
             to_date=date(2020, 1, 1),
         )
         self.assertRaises(
-            ValueError,
+            InvalidDateRangeException,
             create_booking,
             booking_data,
             RoomInterface(),

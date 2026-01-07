@@ -1,9 +1,25 @@
+
 from hotel.operations.interface import DataInterface
 from hotel.operations.models import BookingCreateData, BookingResult
+from hotel.exceptions import InvalidDateRangeException
 
 
-def read_all_bookings(booking_interface: DataInterface) -> list[BookingResult]:
-    bookings = booking_interface.read_all()
+def read_all_bookings(
+    booking_interface: DataInterface,
+    skip: int = 0,
+    limit: int = 100,
+    customer_id: int | None = None,
+    room_id: int | None = None,
+    sort_by: str = "id",
+    order: str = "asc",
+) -> list[BookingResult]:
+    bookings = booking_interface.read_all(
+        skip=skip,
+        limit=limit,
+        filters={"customer_id": customer_id, "room_id": room_id},
+        sort_by=sort_by,
+        order=order,
+    )
     return [BookingResult(**b) for b in bookings]
 
 
@@ -22,9 +38,16 @@ def create_booking(
 
     days = (data.to_date - data.from_date).days
     if days <= 0:
-        raise ValueError("Invalid dates")
+        raise InvalidDateRangeException(
+            message="Check-out date must be after check-in date",
+            details={
+                "check_in": str(data.from_date),
+                "check_out": str(data.to_date),
+                "days": days
+            }
+        )
 
-    booking_dict = data.dict()
+    booking_dict = data.model_dump() # Replaced dict with model_dump, since dict deprecated
     booking_dict["price"] = room["price"] * days
 
     booking = booking_interface.create(booking_dict)

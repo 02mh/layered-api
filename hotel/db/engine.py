@@ -9,6 +9,7 @@ DBSession = sessionmaker()
 
 
 def init_db(file: str):
+    global engine
     engine = create_engine(file)
     Base.metadata.bind = engine
     DBSession.configure(bind=engine)

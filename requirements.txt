@@ -1,2 +1,9 @@
-notebook==6.5.5
-ipykernel
+fastapi
+sqlalchemy
+uvicorn
+pydantic
+pydantic-settings
+python-dotenv
+slowapi
+pytest
+httpx
