@@ -36,44 +36,44 @@ Ultimately, the goal was to transform the initial prototype into a more mature, 
 ```text
 .
 ├── hotel/
-│   ├── db/                 # Database models and session management
-│   │   ├── create_db.py    # Database initialization script
-│   │   ├── db_interface.py # Generic database interface
-│   │   ├── engine.py       # SQLAlchemy engine and session setup
-│   │   ├── models.py       # SQLAlchemy database models
-│   │   └── sample_data.py  # Seed data for the database
-│   ├── operations/         # Business logic layer
-│   │   ├── bookings.py     # Booking-related operations
-│   │   ├── customers.py    # Customer-related operations
-│   │   ├── interface.py    # Interfaces for operations
-│   │   ├── models.py       # Pydantic models for data validation
-│   │   └── rooms.py        # Room-related operations
-│   ├── routers/            # FastAPI router definitions
-│   │   ├── bookings.py     # Booking API endpoints
-│   │   ├── customers.py    # Customer API endpoints
-│   │   ├── rooms.py        # Room API endpoints
-│   │   └── health.py       # Health check endpoints
-│   ├── middleware/         # Middleware components
-│   │   ├── exception_handlers.py  # Global exception handlers
-│   │   ├── rate_limiter.py        # Rate limiting configuration
-│   │   └── rate_limit_handlers.py # Rate limit error handlers
-│   ├── config.py           # Configuration management with Pydantic settings
-│   └── exceptions.py       # Custom exception hierarchy
-├── tests/              # Test suite organized by type
-│   ├── unit/           # Unit tests (business logic, individual components)
+│   ├── db/                             # Database models and session management
+│   │   ├── create_db.py                # Database initialization script
+│   │   ├── db_interface.py             # Generic database interface
+│   │   ├── engine.py                   # SQLAlchemy engine and session setup
+│   │   ├── models.py                   # SQLAlchemy database models
+│   │   └── sample_data.py              # Seed data for the database
+│   ├── operations/                     # Business logic layer
+│   │   ├── bookings.py                 # Booking-related operations
+│   │   ├── customers.py                # Customer-related operations
+│   │   ├── interface.py                # Interfaces for operations
+│   │   ├── models.py                   # Pydantic models for data validation
+│   │   └── rooms.py                    # Room-related operations
+│   ├── routers/                        # FastAPI router definitions
+│   │   ├── bookings.py                 # Booking API endpoints
+│   │   ├── customers.py                # Customer API endpoints
+│   │   ├── rooms.py                    # Room API endpoints
+│   │   └── health.py                   # Health check endpoints
+│   ├── middleware/                     # Middleware components
+│   │   ├── exception_handlers.py       # Global exception handlers
+│   │   ├── rate_limiter.py             # Rate limiting configuration
+│   │   └── rate_limit_handlers.py      # Rate limit error handlers
+│   ├── config.py                       # Configuration management with Pydantic settings
+│   └── exceptions.py                   # Custom exception hierarchy
+├── tests/                              # Test suite organized by type
+│   ├── unit/                           # Unit tests (business logic, individual components)
 │   │   └── test_bookings.py
-│   ├── integration/    # Integration tests (API endpoints, database)
+│   ├── integration/                    # Integration tests (API endpoints, database)
 │   │   └── test_complete_suite.py
-│   ├── functional/     # Functional/End-to-end tests
-│   ├── test_exceptions.py    # Cross-cutting exception handling tests
-│   ├── test_rate_limiting.py # Infrastructure-level rate limiting tests
-│   └── conftest.py     # Shared pytest fixtures
-├── main.py                 # Application entry point
-├── requirements.txt        # Project dependencies
-├── Dockerfile              # Docker configuration for containerization
-├── .env.example            # Template for environment variables
-├── LICENSE                 # Project license
-└── hotel.db                # SQLite database file (generated)
+│   ├── functional/                     # Functional/End-to-end tests
+│   ├── test_exceptions.py              # Cross-cutting exception handling tests
+│   ├── test_rate_limiting.py           # Infrastructure-level rate limiting tests
+│   └── conftest.py                     # Shared pytest fixtures
+├── main.py                             # Application entry point
+├── requirements.txt                    # Project dependencies
+├── Dockerfile                          # Docker configuration for containerization
+├── .env.example                        # Template for environment variables
+├── LICENSE                             # Project license
+└── hotel.db                            # SQLite database file (generated)
 ```
 
 ## Requirements
