@@ -59,14 +59,19 @@ Ultimately, the goal was to transform the initial prototype into a more mature, 
 │   │   └── rate_limit_handlers.py # Rate limit error handlers
 │   ├── config.py           # Configuration management with Pydantic settings
 │   └── exceptions.py       # Custom exception hierarchy
+├── tests/              # Test suite organized by type
+│   ├── unit/           # Unit tests (business logic, individual components)
+│   │   └── test_bookings.py
+│   ├── integration/    # Integration tests (API endpoints, database)
+│   │   └── test_complete_suite.py
+│   ├── functional/     # Functional/End-to-end tests
+│   ├── test_exceptions.py    # Cross-cutting exception handling tests
+│   ├── test_rate_limiting.py # Infrastructure-level rate limiting tests
+│   └── conftest.py     # Shared pytest fixtures
 ├── main.py                 # Application entry point
 ├── requirements.txt        # Project dependencies
 ├── Dockerfile              # Docker configuration for containerization
 ├── .env.example            # Template for environment variables
-├── test_booking.py         # Sample business logic tests
-├── test_complete_suite.py  # End-to-end API tests
-├── test_exceptions.py      # Exception handling tests
-├── test_rate_limiting.py   # Rate limiting tests
 ├── LICENSE                 # Project license
 └── hotel.db                # SQLite database file (generated)
 ```
@@ -153,21 +158,42 @@ The following packages are required:
 
 ## Running Tests
 
-The project uses `unittest` and is compatible with `pytest`.
+The project uses a structured testing approach with `pytest`:
 
-- **Run all tests using pytest**:
+- **Unit Tests**: Focus on individual components and business logic in `hotel/operations/`.
+- **Integration Tests**: Verify the interaction between different layers, including API endpoints and database.
+- **Cross-cutting Tests**: Cover infrastructure concerns like rate limiting and exception handling.
+
+### Test Organization
+- `tests/unit/`: Isolated tests for business logic.
+- `tests/integration/`: API and database integration tests.
+- `tests/functional/`: End-to-end scenarios (planned).
+- `tests/*.py`: Cross-cutting and infrastructure tests.
+
+### Execution Commands
+
+- **Run all tests**:
    ```bash
    pytest
    ```
 
+- **Run tests by category**:
+   ```bash
+   pytest tests/unit
+   pytest tests/integration
+   ```
+
 - **Run specific test file**:
    ```bash
-   python test_booking.py
+   pytest tests/unit/test_bookings.py
    ```
 
 ### Running Tests with Docker
 
-You can also run tests inside the Docker container:
+You can run tests inside the Docker container. This ensures a consistent environment regardless of your local setup.
+
+**Prerequisites:**
+- [Docker](https://www.docker.com/products/docker-desktop/) must be installed and running.
 
 ```bash
 # Build the image (if not already built)
@@ -176,9 +202,18 @@ docker build -t hotel-api .
 # Run all tests
 docker run --rm hotel-api pytest
 
-# Run a specific test file
-docker run --rm hotel-api pytest test_booking.py
+# Run a specific category
+docker run --rm hotel-api pytest tests/unit
 ```
+
+#### Troubleshooting Docker Issues
+
+If you encounter errors like `failed to connect to the docker API` or `the system cannot find the file specified`:
+
+1.  **Check if Docker Desktop is running**: Ensure the Docker icon is visible in your system tray and indicates "Docker Desktop is running".
+2.  **Verify Daemon Connectivity**: Run `docker info` or `docker version` in your terminal to check if the client can communicate with the daemon.
+3.  **Check Context/Engine**: On Windows, if you are using WSL 2, ensure "Use the WSL 2 based engine" is checked in Docker Desktop settings.
+4.  **Restart Docker**: Sometimes restarting Docker Desktop resolves intermittent pipe connection issues.
 
 ## Configuration
 
